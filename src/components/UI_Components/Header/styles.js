@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Flex } from "../Box/styles";
 
 export const Styles = styled.header`
   margin-top: 103px;
@@ -33,6 +34,7 @@ export const Buttons = styled.div`
 
 export const Grid = styled("div")`
   display: grid;
+  position: relative;
   grid-template-columns: ${(props) => props.columns || "1fr"};
   grid-template-rows: ${(props) => props.rows || "auto"};
   grid-gap: ${(props) => props.gap || "10px"};
@@ -53,4 +55,15 @@ export const Grid = styled("div")`
       grid-template-rows: 300px 300px;
     }
   }
+`;
+
+export const WhatsApp = styled(Flex)`
+  position: absolute;
+  bottom: 32px;
+  box-shadow: 0 0 4px 2px #8080801a;
+  cursor: pointer;
+  right: 15px;
+  background-color: ${({ theme }) => theme.palette.common.white};
+  border-radius: 50%;
+  box-shadow: ${({ theme }) => " 0 0 0 15px " + theme.palette.success.main};
 `;

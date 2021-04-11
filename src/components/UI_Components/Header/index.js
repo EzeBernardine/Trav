@@ -1,10 +1,11 @@
-import { Styles, Buttons, Container, Grid } from "./styles";
+import { Styles, Buttons, Container, Grid, WhatsApp } from "./styles";
 import { Flex, Frame } from "../Box/styles";
 import Img from "../../assest/Rectangle 59.png";
 import Img1 from "../../assest/Rectangle 60.png";
 import Img2 from "../../assest/Rectangle 61.png";
 import Button from "../Button";
 import { Header1, Paragraph } from "../Fonts/styles";
+import { WhatsAppIcon } from "../../assest/svg";
 
 const Header = () => {
   return (
@@ -51,6 +52,9 @@ const Header = () => {
             <Frame width="100%" height="100%">
               <img src={Img2} alt="action" />
             </Frame>
+            <WhatsApp width="25px" height="25px">
+              <WhatsAppIcon width="25px" height="25px" color='white' />
+            </WhatsApp>
           </Grid>
         </Grid>
       </Container>

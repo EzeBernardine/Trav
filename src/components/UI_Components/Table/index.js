@@ -1,7 +1,21 @@
 import React from "react";
-import { TableMain, TableRight, TableLeft } from "./styles";
+import {
+  TableMain,
+  TableRight,
+  TableLeft,
+  TopRowLeft,
+  MiddleRowLeft,
+  BottomRowLeft,
+  TopRowRight,
+  MiddleRowRight,
+  BottomRowRight,
+  RowFirstChild,
+  RowSecondChild,
+  Badge,
+} from "./styles";
 import { Span, Header4 } from "../Fonts/styles";
-import { Flex, Grid } from "../Box/styles";
+import { Flex } from "../Box/styles";
+import { CheckIcon } from "../../assest/svg";
 
 const Table = ({}) => {
   return (
@@ -9,8 +23,8 @@ const Table = ({}) => {
       <Flex direction="row" align="flex-start">
         <TableLeft>
           <Flex direction="column">
-            <Flex justify="space-between" className="topRow">
-              <div>
+            <TopRowLeft justify="space-between" className="topRow">
+              <RowFirstChild width="max-content" align="flex-end">
                 <Header4
                   size="24px"
                   colorTheme="primary/main"
@@ -19,30 +33,34 @@ const Table = ({}) => {
                 >
                   What we offer
                 </Header4>
-              </div>
-              <div>
+              </RowFirstChild>
+              <RowSecondChild width="max-content" align="flex-end">
                 <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
                   College Application
                 </Span>
-              </div>
-            </Flex>
+              </RowSecondChild>
+            </TopRowLeft>
 
-            <Flex
+            <MiddleRowLeft
               justify="space-between"
               className="middleRow"
               flexWrap="nowrap"
             >
-              <div>
+              <RowFirstChild width="max-content" align="flex-end">
                 <Span
                   colorTheme="white"
-                  size="18px"
+                  size="20px"
                   lineHeight="22px"
                   weight="700"
                 >
                   Trav4College
                 </Span>
-              </div>
-              <Flex width="max-content" align="flex-end" direction="column">
+              </RowFirstChild>
+              <RowSecondChild
+                width="max-content"
+                align="flex-end"
+                direction="column"
+              >
                 <Span
                   colorTheme="white"
                   size="20px"
@@ -62,15 +80,22 @@ const Table = ({}) => {
                 >
                   -92% OFF
                 </Span>
-              </Flex>
-            </Flex>
+              </RowSecondChild>
+              <Badge width="max-content">
+                <CheckIcon width="15px" height="20px" color="white" />
+                <CheckIcon width="15px" height="20px" color="white" />
+                <Span colorTheme="white" size="16px" lineieght='18px' bold>
+                  Chepeast
+                </Span>
+              </Badge>
+            </MiddleRowLeft>
 
-            <Flex
+            <BottomRowLeft
               justify="space-between"
               className="bottomRow"
               flexWrap="nowrap"
             >
-              <div>
+              <RowFirstChild width="max-content" align="flex-end">
                 <Span
                   colorTheme="grey/default"
                   size="20px"
@@ -79,8 +104,12 @@ const Table = ({}) => {
                 >
                   Trav4College
                 </Span>
-              </div>
-              <Flex width="max-content" align="flex-end" direction="column">
+              </RowFirstChild>
+              <RowSecondChild
+                width="max-content"
+                align="flex-end"
+                direction="column"
+              >
                 <Span
                   colorTheme="grey/default"
                   size="20px"
@@ -100,32 +129,36 @@ const Table = ({}) => {
                 >
                   0% OFF
                 </Span>
-              </Flex>
-            </Flex>
+              </RowSecondChild>
+            </BottomRowLeft>
           </Flex>
         </TableLeft>
         {/* --------------right side of the table------------------- */}
         <TableRight>
           <Flex direction="column">
-            <Flex justify="space-between" className="topRow second">
-              <div>
+            <TopRowRight justify="space-between" className="topRow second">
+              <RowFirstChild width="max-content" align="flex-end">
                 <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
                   Study Consultancy
                 </Span>
-              </div>
-              <div>
+              </RowFirstChild>
+              <RowSecondChild width="max-content" align="flex-end">
                 <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
                   Feedback Time
                 </Span>
-              </div>
-            </Flex>
+              </RowSecondChild>
+            </TopRowRight>
 
-            <Flex
+            <MiddleRowRight
               justify="space-between"
               className="middleRow"
               flexWrap="nowrap"
             >
-              <Flex width="max-content" align="flex-end" direction="column">
+              <RowFirstChild
+                width="max-content"
+                align="flex-end"
+                direction="column"
+              >
                 <Span
                   colorTheme="white"
                   size="20px"
@@ -145,16 +178,23 @@ const Table = ({}) => {
                 >
                   -92% OFF
                 </Span>
-              </Flex>
-              <div>
+              </RowFirstChild>
+              <RowSecondChild width="max-content" align="flex-end">
                 <Span colorTheme="white" size="18px" lineHeight="22px" bold>
                   Instant feedback time
                 </Span>
-              </div>
-            </Flex>
+              </RowSecondChild>
+            </MiddleRowRight>
 
-            <Flex justify="space-between" className="bottomRow second">
-              <Flex width="max-content" align="flex-end" direction="column">
+            <BottomRowRight
+              justify="space-between"
+              className="bottomRow second"
+            >
+              <RowFirstChild
+                width="max-content"
+                align="flex-end"
+                direction="column"
+              >
                 <Span
                   colorTheme="grey/default"
                   size="20px"
@@ -174,13 +214,13 @@ const Table = ({}) => {
                 >
                   0% OFF
                 </Span>
-              </Flex>
-              <div>
+              </RowFirstChild>
+              <RowSecondChild width="max-content" align="flex-end">
                 <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
                   Over 2 weeks
                 </Span>
-              </div>
-            </Flex>
+              </RowSecondChild>
+            </BottomRowRight>
           </Flex>
         </TableRight>
       </Flex>

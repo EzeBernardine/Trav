@@ -11,6 +11,7 @@ import {
   BottomRowRight,
   RowFirstChild,
   RowSecondChild,
+  Container,
   Badge,
 } from "./styles";
 import { Span, Header4 } from "../Fonts/styles";
@@ -20,10 +21,10 @@ import { CheckIcon } from "../../assest/svg";
 const Table = ({}) => {
   return (
     <TableMain>
-      <Flex direction="row" align="flex-start">
+      <Container direction="row" align="flex-start">
         <TableLeft>
           <Flex direction="column">
-            <TopRowLeft justify="space-between" className="topRow">
+            <TopRowLeft justify="space-between">
               <RowFirstChild width="max-content" align="flex-end">
                 <Header4
                   size="24px"
@@ -84,7 +85,7 @@ const Table = ({}) => {
               <Badge width="max-content">
                 <CheckIcon width="15px" height="20px" color="white" />
                 <CheckIcon width="15px" height="20px" color="white" />
-                <Span colorTheme="white" size="16px" lineieght='18px' bold>
+                <Span colorTheme="white" size="16px" lineieght="18px" bold>
                   Chepeast
                 </Span>
               </Badge>
@@ -223,7 +224,7 @@ const Table = ({}) => {
             </BottomRowRight>
           </Flex>
         </TableRight>
-      </Flex>
+      </Container>
     </TableMain>
   );
 };

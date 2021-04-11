@@ -3,21 +3,21 @@ import { Flex } from "../Box/styles";
 
 export const TableMain = styled.section`
   margin: -190px 5% 200px;
-  > div {
-    max-width: 1204.04px;
-    margin: auto;
-    @media (max-width: 950px) {
-      flex-direction: column;
-      > div {
-        width: 100%;
-      }
-    }
-  }
 
   /* ----------------media------------- */
   @media (max-width: 1200px) {
     * {
       font-size: 16px;
+    }
+  }
+`;
+export const Container = styled(Flex)`
+  max-width: 1204.04px;
+  margin: auto;
+  @media (max-width: 950px) {
+    flex-direction: column;
+    > div {
+      width: 100%;
     }
   }
 `;

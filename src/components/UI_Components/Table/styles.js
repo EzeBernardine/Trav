@@ -33,7 +33,7 @@ export const TableRight = styled.div`
   width: 50%;
   margin-top: 21.89px;
   @media (max-width: 1200px) {
-    margin-top: 1px;
+    margin-top: 2px;
   }
 `;
 // -----------------------Left side of the table-----------------------
@@ -75,6 +75,10 @@ export const Badge = styled(Flex)`
   }
   svg:nth-child(2) {
     margin-right: 7px;
+  }
+  @media (max-width: 1200px) {
+    top:10px;
+    padding: 3px 6px 3px 16px;
   }
 `;
 // -----------------------Right side of the table-----------------------

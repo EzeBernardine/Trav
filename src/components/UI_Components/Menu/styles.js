@@ -4,7 +4,7 @@ export const Styles = styled.menu`
   height: 103px;
   width: 100%;
   position: fixed;
-  padding:0;
+  padding: 0;
   background: white;
   z-index: 100;
   right: 0;
@@ -59,7 +59,33 @@ export const MenuIconWrap = styled.div`
   position: relative;
 `;
 // --------------------mobile views----------
-export const SmallScreenNav = styled(Nav)`
+
+export const MobileView = styled.div`
+  position: absolute;
+  right: 0;
+  top: 31px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 2px #8080801a;
+`;
+export const MobileViewContainer = styled.div`
+  @keyframes rollDown {
+    0% {
+      top: -100%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+  position: relative;
+  background: white;
+  top: -100%;
+  right: 0;
+  border-radius: 4px;
+  padding: 15px 0 5px;
+  animation: rollDown 300ms linear forwards;
+`;
+
+export const MobileViewNav = styled(Nav)`
   display: none;
   ul {
     display: block;
@@ -76,7 +102,7 @@ export const SmallScreenNav = styled(Nav)`
     display: block;
   }
 `;
-export const SmallScreenLogin = styled(Login)`
+export const MobileViewLogin = styled(Login)`
   display: none;
   span {
     padding: 7px 15px;
@@ -91,20 +117,11 @@ export const SmallScreenLogin = styled(Login)`
     }
   }
   button {
-    margin: 3px 0 0;
-    width: 100%;
+    margin: 3px 5px 0;
+    width: calc(100% - 10px);
     padding: 10px 20px;
   }
   @media (max-width: 1220px) {
     display: block;
   }
-`;
-export const MobileView = styled.div`
-  position: absolute;
-  background: white;
-  right: 0;
-  border-radius: 4px;
-  padding: 15px 0;
-  box-shadow: 0 0 4px 2px #8080801a;
-  top: 31px;
 `;

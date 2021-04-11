@@ -5,8 +5,9 @@ import {
   Title,
   Login,
   MenuIconWrap,
-  SmallScreenNav,
-  SmallScreenLogin,
+  MobileViewNav,
+  MobileViewLogin,
+  MobileViewContainer,
   MobileView,
 } from "./styles";
 import { Flex, Frame } from "../Box/styles";
@@ -21,7 +22,7 @@ const Header = () => {
 
   return (
     <Styles>
-      <Flex justify="space-between" height="100%" margin="0 3%" width='auto'>
+      <Flex justify="space-between" height="100%" margin="0 3%" width="auto">
         <Flex
           margin="0 0 0 0"
           justify="flex-start"
@@ -66,25 +67,27 @@ const Header = () => {
           />
           {showMore ? (
             <MobileView>
-              <SmallScreenNav>
-                <ul>
-                  <ListItems>
-                    <a href="/"> College Application </a>
-                  </ListItems>
-                  <ListItems>
-                    <a href="/"> Scholarships </a>
-                  </ListItems>
-                  <ListItems>
-                    <a href="/"> Trav4College Packages </a>
-                  </ListItems>
-                </ul>
-              </SmallScreenNav>
-              <SmallScreenLogin>
-                <Span>
-                  <a href="/">Login</a>
-                </Span>
-                <Button text="Get started" />
-              </SmallScreenLogin>
+              <MobileViewContainer>
+                <MobileViewNav>
+                  <ul>
+                    <ListItems>
+                      <a href="/"> College Application </a>
+                    </ListItems>
+                    <ListItems>
+                      <a href="/"> Scholarships </a>
+                    </ListItems>
+                    <ListItems>
+                      <a href="/"> Trav4College Packages </a>
+                    </ListItems>
+                  </ul>
+                </MobileViewNav>
+                <MobileViewLogin>
+                  <Span>
+                    <a href="/">Login</a>
+                  </Span>
+                  <Button text="Get started" />
+                </MobileViewLogin>
+              </MobileViewContainer>
             </MobileView>
           ) : null}
         </MenuIconWrap>

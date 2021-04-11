@@ -18,7 +18,7 @@ import { Span, Header4 } from "../Fonts/styles";
 import { Flex } from "../Box/styles";
 import { CheckIcon } from "../../assest/svg";
 
-const Table = ({}) => {
+const Table = () => {
   return (
     <TableMain>
       <Container direction="row" align="flex-start">

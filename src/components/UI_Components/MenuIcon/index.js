@@ -8,9 +8,9 @@ import { Container, Wrapper, Icon } from "./styles";
 import PropTypes from "prop-types";
 
 const MenuIcon = ({ click, showMore, color }) => {
-  console.log(showMore)
+  console.log(showMore);
   return (
-    <Container onClick={click} >
+    <Container onClick={click}>
       <Wrapper>
         <Icon showMore={showMore} color={color} />
       </Wrapper>

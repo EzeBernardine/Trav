@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Styles = styled.menu`
   height: 103px;
-  padding: 0 5%;
   width: 100%;
   position: fixed;
+  padding:0;
   background: white;
   z-index: 100;
   right: 0;

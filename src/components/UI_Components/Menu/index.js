@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <Styles>
-      <Flex auto justify="space-between" height="100%">
+      <Flex justify="space-between" height="100%" margin="0 3%" width='auto'>
         <Flex
           margin="0 0 0 0"
           justify="flex-start"

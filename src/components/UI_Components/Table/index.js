@@ -1,132 +1,191 @@
-import React, { useState } from "react";
-import {
-  CustomTableMain,
-  TableBodyData,
-  Paginator,
-  Table,
-  TableHead,
-  TableRow,
-  TableRowShowMore,
-  TableHeadData,
-} from "./styles";
-import { generateID } from "../../../lib/generateID";
-import PropTypes from "prop-types";
-import { OverFlowScrollBar } from "../OverflowScroll/styles";
-import Pagination from "../Paginator";
-import { Span } from "../Fonts/styles";
+import React from "react";
+import { TableMain, TableRight, TableLeft } from "./styles";
+import { Span, Header4 } from "../Fonts/styles";
+import { Flex, Grid } from "../Box/styles";
 
-const CustomTable = ({
-  tableBody,
-  tableHead,
-  rowHovColor,
-  gap,
-  paginator,
-  pageSize,
-  firstLast,
-  prevNext,
-  moreDetail,
-}) => {
-  const [pageOfItems, setPageOfItems] = useState([]);
-  const [isOpen, setIsOpen] = useState([]);
-  const [tableData] = useState(tableBody);
-
-  const onChangePage = (items) => setPageOfItems(items);
-
-  const handleOpenTable = (idx) =>
-    isOpen === idx ? setIsOpen(-1) : setIsOpen(idx);
-
-  const returnTableRow = (data, idx, isOpen) => {
-    let index = idx + 1;
-    let __data = { ...data };
-    // delete __data._id;
-
-    return (
-      <React.Fragment key={generateID(17)}>
-        <TableRow onClick={() => handleOpenTable(index)}>
-          {Object.values(__data).map((item, i) => (
-            <TableBodyData
-              head={(tableHead[i] && tableHead[i].replace(/'/g, "")) || ""}
-              key={generateID(14)}
-            >
-              {item}
-            </TableBodyData>
-          ))}
-        </TableRow>
-        <TableRowShowMore
-          style={{
-            display: `${isOpen === index ? "table-row" : "none"}`,
-          }}
-        >
-          <TableBodyData colSpan="5">
-            <Span colorTheme="primary.default" spacing=".025rem">
-              {moreDetail[idx].more.props.children}
-            </Span>
-          </TableBodyData>
-        </TableRowShowMore>
-      </React.Fragment>
-    );
-  };
-
+const Table = ({}) => {
   return (
-    <>
-      {tableBody.length !== 0 ? (
-        <CustomTableMain
-          gap={gap}
-          rowHovColor={rowHovColor}
-          paginator={paginator}
-        >
-          <OverFlowScrollBar className="container">
-            <Table>
-              <TableHead>
-                <tr>
-                  {tableHead.map((head, i) => (
-                    <TableHeadData key={generateID(11)}>
-                      {head.toUpperCase()}
-                    </TableHeadData>
-                  ))}
-                </tr>
-              </TableHead>
+    <TableMain>
+      <Flex direction="row" align="flex-start">
+        <TableLeft>
+          <Flex direction="column">
+            <Flex justify="space-between" className="topRow">
+              <div>
+                <Header4
+                  size="24px"
+                  colorTheme="primary/main"
+                  weight="700"
+                  lineHeight="26.4px"
+                >
+                  What we offer
+                </Header4>
+              </div>
+              <div>
+                <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
+                  College Application
+                </Span>
+              </div>
+            </Flex>
 
-              <tbody>
-                {paginator
-                  ? pageOfItems.map((data, idx) =>
-                      returnTableRow(data, idx, isOpen)
-                    )
-                  : tableBody.map((data, idx) =>
-                      returnTableRow(data, idx, isOpen)
-                    )}
-              </tbody>
-            </Table>
-          </OverFlowScrollBar>
+            <Flex
+              justify="space-between"
+              className="middleRow"
+              flexWrap="nowrap"
+            >
+              <div>
+                <Span
+                  colorTheme="white"
+                  size="18px"
+                  lineHeight="22px"
+                  weight="700"
+                >
+                  Trav4College
+                </Span>
+              </div>
+              <Flex width="max-content" align="flex-end" direction="column">
+                <Span
+                  colorTheme="white"
+                  size="20px"
+                  lineHeight="22px"
+                  weight="700"
+                >
+                  150.00{" "}
+                  <Span colorTheme="white" size="20px" lineHeight="22px">
+                    United States Dollars
+                  </Span>
+                </Span>
+                <Span
+                  colorTheme="success/main"
+                  weight="600"
+                  size="20px"
+                  lineHeight="28px"
+                >
+                  -92% OFF
+                </Span>
+              </Flex>
+            </Flex>
 
-          <Paginator className="paginator" paginator={paginator}>
-            <Pagination
-              items={tableData}
-              pageSize={pageSize || 5}
-              prevNext={prevNext || null}
-              onChangePage={onChangePage}
-              firstLast={firstLast || null}
-            />
-          </Paginator>
-        </CustomTableMain>
-      ) : (
-        <p>No data</p>
-      )}
-    </>
+            <Flex
+              justify="space-between"
+              className="bottomRow"
+              flexWrap="nowrap"
+            >
+              <div>
+                <Span
+                  colorTheme="grey/default"
+                  size="20px"
+                  lineHeight="22px"
+                  bold
+                >
+                  Trav4College
+                </Span>
+              </div>
+              <Flex width="max-content" align="flex-end" direction="column">
+                <Span
+                  colorTheme="grey/default"
+                  size="20px"
+                  lineHeight="22px"
+                  weight="700"
+                >
+                  200.00{" "}
+                  <Span colorTheme="grey/default" size="20px" lineHeight="22px">
+                    United States Dollars
+                  </Span>
+                </Span>
+                <Span
+                  colorTheme="primary/main"
+                  weight="600"
+                  size="20px"
+                  lineHeight="28px"
+                >
+                  0% OFF
+                </Span>
+              </Flex>
+            </Flex>
+          </Flex>
+        </TableLeft>
+        {/* --------------right side of the table------------------- */}
+        <TableRight>
+          <Flex direction="column">
+            <Flex justify="space-between" className="topRow second">
+              <div>
+                <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
+                  Study Consultancy
+                </Span>
+              </div>
+              <div>
+                <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
+                  Feedback Time
+                </Span>
+              </div>
+            </Flex>
+
+            <Flex
+              justify="space-between"
+              className="middleRow"
+              flexWrap="nowrap"
+            >
+              <Flex width="max-content" align="flex-end" direction="column">
+                <Span
+                  colorTheme="white"
+                  size="20px"
+                  lineHeight="22px"
+                  weight="700"
+                >
+                  150.00{" "}
+                  <Span colorTheme="white" size="20px" lineHeight="22px">
+                    United States Dollars
+                  </Span>
+                </Span>
+                <Span
+                  colorTheme="success/main"
+                  weight="600"
+                  size="20px"
+                  lineHeight="28px"
+                >
+                  -92% OFF
+                </Span>
+              </Flex>
+              <div>
+                <Span colorTheme="white" size="18px" lineHeight="22px" bold>
+                  Instant feedback time
+                </Span>
+              </div>
+            </Flex>
+
+            <Flex justify="space-between" className="bottomRow second">
+              <Flex width="max-content" align="flex-end" direction="column">
+                <Span
+                  colorTheme="grey/default"
+                  size="20px"
+                  lineHeight="22px"
+                  weight="700"
+                >
+                  200.00{" "}
+                  <Span colorTheme="grey/default" size="20px" lineHeight="22px">
+                    United States Dollars
+                  </Span>
+                </Span>
+                <Span
+                  colorTheme="primary/main"
+                  weight="600"
+                  size="20px"
+                  lineHeight="28px"
+                >
+                  0% OFF
+                </Span>
+              </Flex>
+              <div>
+                <Span colorTheme="grey[200]" size="18px" lineHeight="20px" bold>
+                  Over 2 weeks
+                </Span>
+              </div>
+            </Flex>
+          </Flex>
+        </TableRight>
+      </Flex>
+    </TableMain>
   );
 };
 
-CustomTable.propTypes = {
-  tableBody: PropTypes.array.isRequired,
-  tableHead: PropTypes.array.isRequired,
-  moreDetail: PropTypes.array.isRequired,
-  rowClick: PropTypes.func,
-  rowHovColor: PropTypes.string,
-  gap: PropTypes.string,
-  pageSize: PropTypes.number,
-  firstLast: PropTypes.any,
-  paginator: PropTypes.any,
-  prevNext: PropTypes.any,
-};
-
-export default CustomTable;
+export default Table;

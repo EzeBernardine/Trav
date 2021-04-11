@@ -1,4 +1,4 @@
-import { spacing, fontSizes } from "./units";
+import { spacing } from "./units";
 
 const white = "#fff";
 const black = "#111";
@@ -10,10 +10,12 @@ const palette = {
   },
   primary: {
     default: "#0480FC",
-    main: "#2773BE",
+    main: "#075CB2",
     background: "#F2F9FF",
   },
-
+  success: {
+    main: "#09CF70",
+  },
   grey: {
     100: "#f7f5f5",
     200: "#4D5E70",
@@ -28,10 +30,10 @@ const shadows = {
   2: "0px 8px 30px rgba(0, 0, 0, 0.24)",
 };
 
-const typography = {
-  fontFamily:
-    "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif",
-};
+// const typography = {
+//   fontFamily:
+//     "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif",
+// };
 
 const shape = {
   borderRadius: spacing["xxsmall"],
@@ -40,8 +42,8 @@ const shape = {
 export const theme = {
   palette,
   shadows,
-  typography,
+  // typography,
   shape,
-  fontSizes,
+  // fontSizes,
   spacing,
 };

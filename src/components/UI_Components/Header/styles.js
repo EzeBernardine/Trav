@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Styles = styled.header`
   margin-top: 103px;
   background-color: ${({ theme }) => theme.palette.primary.background};
-  padding: 40px 5%;
+  padding: 40px 0% 284px;
 `;
 export const Container = styled.div`
   display: flex;
+  margin: 0 3%;
   justify-content: space-between;
   @media (max-width: 1000px) {
     flex-direction: column;

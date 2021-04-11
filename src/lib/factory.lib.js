@@ -1,18 +1,6 @@
 import moment from "moment";
 
 /**
- * Truncate
- * returns the truncated text with "..." or any specified ending character
- * @param {String} str
- * @param {Number} length
- * @param {String} ending
- * */
-export const truncate = (str = "", length = 20, ending = "...") =>
-  str.length > length
-    ? `${str.substring(0, length - ending.length)} ${ending}`
-    : str;
-
-/**
  * formatDate
  * Returns a moment formatted date
  * @param {Date} date
@@ -58,13 +46,13 @@ export const getColorFromTheme = ({ colorTheme, theme }) => {
       ? theme.palette.grey[100]
       : colorTheme === "grey[200]"
       ? theme.palette.grey[200]
-      // : colorTheme === "grey[300]"
-      // ? theme.palette.grey[300]
-      // : colorTheme === "grey[400]"
+      : colorTheme === "success/main"
+      ? theme.palette.success.main
+      : // : colorTheme === "grey[400]"
       // ? theme.palette.grey[400]
       // : colorTheme === "grey[500]"
       // ? theme.palette.grey[500]
-      : colorTheme === "white"
+      colorTheme === "white"
       ? theme.palette.common.white
       : colorTheme === "black"
       ? theme.palette.common.black

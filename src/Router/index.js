@@ -14,7 +14,6 @@ const Router = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Switch>
-          {/* route the user to the dashboard on click of the home page if he has active token, else, remain on the home page */}
           <Route path="/" component={Home} exact />
 
           <Route component={Error} />
